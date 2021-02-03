@@ -6,7 +6,9 @@ function img_recon = patch2im(patches, img_size, skip_size, border)
 %   - border: whether keep borders of the image when it cannot be separated
 %				exactly, string array, value={'on', 'off'}
 %	- img_recon: reconstructed image, gray or multi-channel
-
+% 
+%	Note: if 'border' is 'on', then the last sub-image will be the "first"
+%	sub-image counting from the end of the row or the column.
 if(nargin < 4), border = 'off'; end
 
 patch_size = [size(patches,1) size(patches,2)];
@@ -54,6 +56,8 @@ end
 if strcmp(border, 'off')
     img_x = find(isnan(img_recon(:,:,1)),1);
     img_y = find(isnan(img_recon(:,:,1)'),1);
-    img_recon = img_recon(1:img_x-1, 1:img_y-1,:);
+	if ~isempty(img_x) && ~isempty(img_y)
+		img_recon = img_recon(1:img_x-1, 1:img_y-1,:);
+	end
 
 end

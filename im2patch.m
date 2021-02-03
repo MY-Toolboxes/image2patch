@@ -6,6 +6,9 @@ function patches = im2patch(src_img, patch_size, skip_size, border)
 %   - border: whether keep borders of the image when it cannot be separated
 %				exactly, string array, value={'on', 'off'}
 %   - patches: small patches, [h, w, c] for gray image; [h, w, c, p] for multi-channel
+% 
+%	Note: if 'border' is 'on', then the last sub-image will be the "first"
+%	sub-image counting from the end of the row or the column.
 
 if(nargin < 4), border = 'off'; end
 

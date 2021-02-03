@@ -4,11 +4,11 @@ clc, clear, close all
 % border = 'on'; skip_size = [64 64]; patch_size = [256 256];
 % border = 'on'; skip_size = [64 40]; patch_size = [256 256];
 % border = 'on'; skip_size = [40 40]; patch_size = [256 256];
-border = 'off'; skip_size = [100 100]; patch_size = [200 200];
-% border = 'off'; skip_size = [64 64]; patch_size = [256 256];
+% border = 'off'; skip_size = [100 100]; patch_size = [200 200];
+border = 'off'; skip_size = [64 64]; patch_size = [256 256];
 
-% img = im2double(imread('einstein.bmp'));  % gray image
-img = im2double(imread('tower.jpg'));  % rgb image
+img = im2double(imread('einstein.bmp'));  % gray image
+% img = im2double(imread('tower.jpg'));  % rgb image
 
 img_size = size(img);
 
