@@ -7,8 +7,8 @@ clc, clear, close all
 % border = 'off'; skip_size = [100 100]; patch_size = [200 200];
 border = 'off'; skip_size = [64 64]; patch_size = [256 256];
 
-img = im2double(imread('einstein.bmp'));  % gray image
-% img = im2double(imread('tower.jpg'));  % rgb image
+% img = im2double(imread('einstein.bmp'));  % gray image
+img = im2double(imread('tower.jpg'));  % rgb image
 
 img_size = size(img);
 
@@ -38,7 +38,7 @@ end
 
 
 %patch2img
-img_recon = patch2im(patches, img_size, skip_size, border);
+img_recon = patch2im(patches, img_size(1:2), skip_size, border);
 
 % compare
 figure
