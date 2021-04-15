@@ -25,7 +25,7 @@ Convert image to patches or  recover image for patches with given size and strid
   
   - img_size: the size of original image, 2D int
 
-##### `image2patch_v2
+##### `image2patch_v2`
 
 - `demo.m `: a demo for the patching and restorage functions
 
